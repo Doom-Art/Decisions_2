@@ -40,12 +40,18 @@ namespace If_Statements
 
             }
             else if (choice == "withdrawal"){
-
+                
             }
             else if (choice == "billpayment"){
 
             }
             else if (choice == "accountbalanceupdate"){
+                Console.Write("Please Wait While we Process your request");
+                for (int i =0; i < 3; i++)
+                {
+                    Thread.Sleep(500);
+                    Console.Write(".");
+                }
 
             }
             else{

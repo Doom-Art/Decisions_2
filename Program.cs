@@ -125,7 +125,32 @@ namespace If_Statements
         }
         private static void ParkGarage()
         {
-
+            Console.WriteLine("Thank you for using Sam's parking Garage, How many minutes have you been here for?");
+            bool number = false;
+            int minutes =0;
+            while (!number)
+            {
+                number = Int32.TryParse(Console.ReadLine(), out minutes);
+                if (minutes <= 0)
+                    number = false;
+                if (!number){
+                    Console.WriteLine("Please input a whole number");
+                }
+                else
+                    Console.WriteLine($"\nYou have been here {minutes} minutes please wait while we process your bill\n");
+            }
+            int cost = 2;
+            while (minutes >= 60)
+            {
+                cost += 2;
+                minutes -= 60;
+            }
+            if (minutes > 0){
+                cost += 2;
+            }
+            if (cost > 20)
+                cost = 20;
+            Console.WriteLine($"Your total bill is ${cost}.00, Have a nice day");
         }
         private static void Hurricane()
         {
